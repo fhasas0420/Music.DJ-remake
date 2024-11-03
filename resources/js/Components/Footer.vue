@@ -1,11 +1,11 @@
-    <template>
-        <footer class="bg-black">
-            <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                <div class="md:flex md:justify-between">
+<template>
+    <footer class="bg-black">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-10">
-                    <a href="#" class="flex items-center">
+                    <a :href="route('welcome')" class="flex items-center">
                         <img src="https://www.part.lt/img/14e1c5cbb1ee8c08db3403279c78ef5d933.png" class="h-10" alt="Music.DJ">
-                        <span class="self-center text-2xl font-semibold text-align: left whitespace-nowrap dark:text-white ">Music.DJ</span>
+                        <span class="self-center text-2xl font-semibold text-white text-align: left whitespace-nowrap">Music.DJ</span>
                     </a>
                     <p class="text-white mt-2">&copy; 2024. All Rights Reserved.</p>
                 </div>
@@ -25,6 +25,6 @@
                     </div>
                 </div>
             </div>
-            </div>
-        </footer>
-    </template>
+        </div>
+    </footer>
+</template>

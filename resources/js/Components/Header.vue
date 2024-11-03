@@ -1,35 +1,35 @@
 <template>
-    <div class="relative h-[600px] bg-[url('https://www.part.lt/img/a08fb432b1938be6a2df08bb72dc36756.jpg')] absolute inset-0 h-full w-full bg-cover object-right md:object-center">
-        <div class="h-full w-full overflow-hidden bg-black/20 bg-fixed">
+    <div class="h-[600px] bg-[url('https://www.part.lt/img/a08fb432b1938be6a2df08bb72dc36756.jpg')] bg-cover object-right inset-0 w-full md:object-center">
+        <div class="h-full w-full overflow-hidden">
             <div class="flex h-full items-center justify-center">
-            <div class="px-6 text-center text-white md:px-12 pt-[90px]">
-            <h1 class="mb-6 text-5xl font-Lemon">Coming Soon!</h1>
-            <h3 class="mb-8 text-3xl opacity-50 font-Lemon">STAY TURNED</h3>
-                <div  v-if="distance >= 0">
-                    <div class="flex flex-wrap items-center justify-center gap-4 p-2">
-                        <div class="px-6 py-2 min-w-[120px]">
-                            <div id="days" class="font-Lemon text-5xl text-white text-gray-800">{{ days }}</div>
-                            <div class="text-xs uppercase text-white text-gray-500">days</div>
-                        </div>
-                        <div class="px-6 py-2 min-w-[120px]">
-                            <div id="hours" class="font-Lemon text-5xl text-white text-gray-800">{{ hours }}</div>
-                            <div class="text-xs uppercase text-white text-gray-500">hours</div>
-                        </div>
-                        <div class="px-6 py-2 min-w-[140px]">
-                            <div id="minutes" class="font-Lemon text-5xl text-white text-gray-800">{{ minutes }}</div>
-                            <div class="text-xs uppercase text-white text-gray-500">minutes</div>
-                        </div>
-                        <div class="px-6 py-2 min-w-[120px]">
-                            <div class="font-Lemon text-5xl text-white">{{ seconds }}</div>
-                            <div class="text-xs uppercase text-white text-gray-500">seconds</div>
+                <div class="px-6 text-center text-white md:px-12">
+                    <h1 class="mb-6 text-5xl font-Lemon">Coming Soon!</h1>
+                    <h3 class="mb-8 text-3xl opacity-50 font-Lemon">STAY TURNED</h3>
+                    <div  v-if="distance >= 0">
+                        <div class="flex flex-wrap items-center justify-center gap-4 p-2">
+                            <div class="px-6 py-2">
+                                <div id="days" class="font-Lemon text-5xl text-white text-gray-800">{{ days }}</div>
+                                <div class="text-xs uppercase text-white text-gray-500">days</div>
+                            </div>
+                            <div class="px-6 py-2">
+                                <div id="hours" class="font-Lemon text-5xl text-white text-gray-800">{{ hours }}</div>
+                                <div class="text-xs uppercase text-white text-gray-500">hours</div>
+                            </div>
+                            <div class="px-6 py-2">
+                                <div id="minutes" class="font-Lemon text-5xl text-white text-gray-800">{{ minutes }}</div>
+                                <div class="text-xs uppercase text-white text-gray-500">minutes</div>
+                            </div>
+                            <div class="px-6 py-2">
+                                <div class="font-Lemon text-5xl text-white">{{ seconds }}</div>
+                                <div class="text-xs uppercase text-white text-gray-500">seconds</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div v-else>
-                    <p class="font-Lemon text-5xl text-white">EXPIRED</p>
+                    <div v-else>
+                        <p class="font-Lemon text-5xl text-white">EXPIRED</p>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </template>

@@ -1,24 +1,19 @@
 <template>
     <div v-if="isOpen" class="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black bg-opacity-50">
         <div class="relative p-4 w-full max-w-md max-h-full">
-            <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow">
-                <!-- Modal header -->
                 <div class="p-4 md:p-5 border-b rounded-t flex justify-between items-start">
                     <div class="flex-1">
-                        <h3 class="text-xl font-semibold text-black text-center">
-                            New user?
-                        </h3>
+                        <h3 class="text-xl font-semibold text-black text-center">New user?</h3>
                         <p class="text-black mt-2 text-center">Use the form below to create your account.</p>
                     </div>
-                    <button @click="onClose" type="button" class="end-2.5 text-black bg-transparent hover:bg-gray-200 hover:text-black rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="authentication-modal">
+                    <button @click="onClose" type="button" class="end-2.5 text-black bg-transparent hover:text-black rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="authentication-modal">
                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                         </svg>
                         <span class="sr-only">Close modal</span>
                     </button>
                 </div>
-                <!-- Modal body -->
                 <div class="p-4 md:p-5">
                     <form class="space-y-4" @submit.prevent="submit">
                         <div>
@@ -66,7 +61,6 @@
                         </div>
                     </form>
                 </div>
-                <!-- Modal footer -->
                 <div class="p-4 md:p-5 flex justify-center items-center bg-gradient-to-br from-top to-bot">
                     <p class="text-white mr-4">Already have an account?</p>
                     <a :href="route('loginas')" type="button" class="bg-gray text-white rounded-full hover:bg-blue-800 font-medium text-sm px-5 py-2.5 text-center">Log in</a>
@@ -95,7 +89,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route('register'), {
+    form.post(route('registeris'), {
         onFinish: () => form.reset('password'),
     });
 };

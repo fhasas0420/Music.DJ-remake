@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use App\Models\User;
-use Log;
 
 class LoginController extends Controller
 {
@@ -24,7 +23,8 @@ class LoginController extends Controller
             return redirect()->intended('/main');
         }
 
+        throw ValidationException::withMessages([
+            'password' => __('auth.password'),
+        ]);
     }
-
-
 }

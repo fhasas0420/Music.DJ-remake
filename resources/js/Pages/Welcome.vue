@@ -1,20 +1,36 @@
+<template>
+    <Head title="Join the party! - Music.DJ" />
+    <NavBar  @open-register-modal="toggleRegisterModal" @open-login-modal="toggleLoginModal"/>
+    <RegisterModal :isOpen="isRegisterModalOpen" :onClose="closeRegisterModal" />
+    <LoginModal :isOpen="isLoginModalOpen" :onClose="closeLoginModal" />
+    <ForgotPasswordModal :is-open="isForgotPasswordModal" :on-close="closeForgotPasswordModal"/>
+    <main>
+        <div class="min-h-screen pt-[80px]">
+            <Header/>
+            <Block/>
+        </div>
+    </main>
+    <Footer/>
+</template>
+
 <script setup>
 import { Head, usePage, router } from '@inertiajs/vue3';
 import NavBar from '@/Components/NavBar.vue';
 import RegisterModal from '@/Pages/Auth/RegisterModal.vue';
 import LoginModal from '@/Pages/Auth/LoginModal.vue';
+import ForgotPasswordModal from '@/Pages/Auth/ForgotPasswordModal.vue';
 import Footer from '@/Components/Footer.vue';
 import Header from '@/Components/Header.vue';
 import Block from '@/Components/block.vue';
-import { ref, watch} from 'vue';
+import { ref, watch } from 'vue';
 
 const isRegisterModalOpen = ref(false);
 const isLoginModalOpen = ref(false);
+const isForgotPasswordModal = ref(false);
 const page = usePage();
 
 const toggleRegisterModal = () => {
     isRegisterModalOpen.value = !isRegisterModalOpen.value;
-
 };
 
 const toggleLoginModal = () => {
@@ -28,6 +44,9 @@ watch(() => page.url, (newUrl) => {
   if (newUrl === '/register') {
     isRegisterModalOpen.value = true;
   }
+  if (newUrl === '/forgot-password') {
+    isForgotPasswordModal.value = true;
+  }
 },{ immediate: true });
 
 
@@ -38,6 +57,13 @@ const closeRegisterModal = () => {
     }
 };
 
+const closeForgotPasswordModal = () => {
+    isForgotPasswordModal.value = false;
+    if (page.url === '/forgot-password') {
+        router.visit('/');
+    }
+}
+
 const closeLoginModal = () => {
     isLoginModalOpen.value = false;
     if (page.url === '/login') {
@@ -46,17 +72,3 @@ const closeLoginModal = () => {
 };
 
 </script>
-
-<template>
-    <Head title="Join the party! - Music.DJ" />
-    <NavBar  @open-register-modal="toggleRegisterModal" @open-login-modal="toggleLoginModal"/>
-    <RegisterModal :isOpen="isRegisterModalOpen" :onClose="closeRegisterModal" />
-    <LoginModal :isOpen="isLoginModalOpen" :onClose="closeLoginModal" />
-    <main>
-        <div class="min-h-screen">
-            <Header/>
-            <Block/>
-            <Footer/>
-        </div>
-    </main>
-</template>

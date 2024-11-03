@@ -29,6 +29,8 @@ export default {
             'red': '#FF0000',
             'gray': '#33373e',
             'purple': '#8b5cf6',
+            'gray-200': '#2d3135',
+            'black-300': '#242424',
         },
         fontFamily: {
             'Lemon': ['"LEMON MILK"', 'sans-serif']
