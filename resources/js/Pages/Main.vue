@@ -1,5 +1,5 @@
 <template>
-    <span>{{ $page.props.user.email }}</span>
+    <span>{{ $page.props.auth.user.username }}</span>
 </template>
 
 <script>

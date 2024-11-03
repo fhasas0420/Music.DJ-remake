@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="https://www.part.lt/img/14e1c5cbb1ee8c08db3403279c78ef5d933.png" type="image/x-icon"/ -->
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 

@@ -2,10 +2,10 @@
         <footer class="bg-black">
             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div class="md:flex md:justify-between">
-                <div class="mb-6 md:mb-0">
-                    <a href="https://flowbite.com/" class="flex items-center">
-                        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Flowbite</span>
+                <div class="mb-6 md:mb-10">
+                    <a href="#" class="flex items-center">
+                        <img src="https://www.part.lt/img/14e1c5cbb1ee8c08db3403279c78ef5d933.png" class="h-10" alt="Music.DJ">
+                        <span class="self-center text-2xl font-semibold text-align: left whitespace-nowrap dark:text-white ">Music.DJ</span>
                     </a>
                     <p class="text-white mt-2">&copy; 2024. All Rights Reserved.</p>
                 </div>
@@ -20,9 +20,6 @@
                             </li>
                             <li>
                                 <a href="#" class="hover:underline">Instagram</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hover:underline">Drible</a>
                             </li>
                         </ul>
                     </div>

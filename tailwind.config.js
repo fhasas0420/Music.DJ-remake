@@ -22,11 +22,13 @@ export default {
             },
         },
         colors: {
-            'top': '#51127f',
-            'bot': '#d70a84',
+            'top': '#6865f2',
+            'bot': '#b218fe',
             'white': '#ffffff',
             'black': '#000000',
-            'red': '#FF0000'
+            'red': '#FF0000',
+            'gray': '#33373e',
+            'purple': '#8b5cf6',
         },
         fontFamily: {
             'Lemon': ['"LEMON MILK"', 'sans-serif']
