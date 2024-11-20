@@ -2,7 +2,7 @@
   <nav class="bg-black fixed w-full z-20 top-0 left-0 border-b">
     <div class="max-w-screen-xl mx-auto flex items-center justify-between px-6 py-4">
       <a :href="route('welcome')" class="flex items-center">
-        <img src="https://www.part.lt/img/14e1c5cbb1ee8c08db3403279c78ef5d933.png" class="h-10" alt="Music.DJ">
+        <img src="/images/logo.png" class="h-10" alt="Music.DJ">
         <span class="self-center text-2xl font-semibold text-white whitespace-nowrap">Music.DJ</span>
       </a>
       <div class="hidden md:flex space-x-4">

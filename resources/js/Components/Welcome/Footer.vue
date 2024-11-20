@@ -5,7 +5,7 @@
                 <div class="flex justify-between w-full">
                     <div class="mb-4 md:mb-7 mt-4">
                         <a :href="route('welcome')" class="flex items-center">
-                            <img src="https://www.part.lt/img/14e1c5cbb1ee8c08db3403279c78ef5d933.png" class="h-10" alt="Music.DJ">
+                            <img src="/images/logo.png" class="h-10" alt="Music.DJ">
                             <span class="self-center text-2xl font-semibold text-white whitespace-nowrap">Music.DJ</span>
                         </a>
                         <p class="text-white mt-2">&copy; 2024. All Rights Reserved.</p>

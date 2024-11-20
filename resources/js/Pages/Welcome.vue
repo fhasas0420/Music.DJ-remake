@@ -4,8 +4,8 @@
     <RegisterModal :isOpen="isRegisterModalOpen" :onClose="closeRegisterModal"/>
     <LoginModal :isOpen="isLoginModalOpen" :onClose="closeLoginModal"/>
     <ForgotPasswordModal :is-open="isForgotPasswordModal" :on-close="closeForgotPasswordModal"/>
-    <main class="flex flex-col min-h-screen">
-        <div class="flex-grow">
+    <main class="flex flex-col min-h-screen bg-black">
+        <div>
             <Header/>
             <Block/>
             <Footer/>
@@ -20,7 +20,7 @@
   import ForgotPasswordModal from "@/Pages/Auth/ForgotPasswordModal.vue";
   import Footer from "@/Components/Welcome/Footer.vue";
   import Header from "@/Components/Welcome/Header.vue";
-  import Block from "@/Components/Welcome/block.vue";
+  import Block from "@/Components/Welcome/Main.vue";
   import { ref, watch } from "vue";
   
   const isRegisterModalOpen = ref(false);

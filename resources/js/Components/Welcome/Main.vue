@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-gray">
-        <div class="mx-auto w-full max-w-screen-xl px-6 py-20 relative">
+    <div class="bg-gray-200">
+        <div class="relative mx-auto w-full max-w-screen-xl px-6 py-20 ">
             <div class="flex flex-wrap items-start justify-between">
                 <div class="mt-4 w-full lg:w-5/14">
                     <h1 class="text-white text-xl md:text-5xl font-bold mb-3">Stream music together!</h1>
