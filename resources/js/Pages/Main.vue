@@ -11,5 +11,5 @@
 <script setup>
     import { Head } from '@inertiajs/vue3';
     import Sidebar from '@/Components/Sidebar.vue';
-    import Footer from '@/Components/Footer.vue';
+    import Footer from '@/Components/Welcome/Footer.vue';
 </script>

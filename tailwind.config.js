@@ -19,7 +19,6 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
         },
         colors: {
             'top': '#6865f2',
@@ -34,8 +33,15 @@ export default {
         },
         fontFamily: {
             'Lemon': ['"LEMON MILK"', 'sans-serif']
-        }
+        },
+        screens: {
+            sm: '640px',    // Small devices (default Tailwind breakpoint)
+            md: '768px',    // Medium devices
+            lg: '1024px',   // Large devices
+            xl: '1280px',   // Extra large devices
+        },
     },
+},
 
     plugins: [forms, typography],
 };
