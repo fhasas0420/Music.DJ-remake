@@ -7,22 +7,20 @@
                         <h3 class="text-xl font-semibold text-black text-center">New user?</h3>
                         <p class="text-black mt-2 text-center">Use the form below to create your account.</p>
                     </div>
-                    <button @click="onClose" type="button" class="end-2.5 text-black bg-transparent hover:text-black rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="authentication-modal">
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button>
+                    <Icon icon="akar-icons:cross" class="h-4 w-4 text-black mt-1 cursor-pointer" @click="onClose" />
                 </div>
                 <div class="p-4 md:p-5">
-                    <form class="space-y-4" @submit.prevent="submit">
+                    <form class="space-y-4" @submit.prevent="submit" novalidate>
                         <div>
                             <InputLabel for="username" value="Username"/>
                             <TextInput
                                 id="username"
                                 v-model="form.username"
                                 type="text"
-                                class="mt-1 block w-full"
+                                class="mt-1 block w-full user-invalid:border-red"
+                                required
+                                autofocus
+                                autocomplete="name"
                             />
                             <InputError class="mt-2" :message="form.errors.username" />
                         </div>
@@ -32,7 +30,9 @@
                                 id="email"
                                 v-model="form.email"
                                 type="text"
-                                class="mt-1 block w-full"
+                                class="mt-1 block w-full user-invalid:border-red"
+                                required
+                                autocomplete="email"
                             />
                             <InputError class="mt-2" :message="form.errors.email"/>
                         </div>
@@ -42,7 +42,9 @@
                                 id="password"
                                 v-model="form.password"
                                 type="password"
-                                class="mt-1 block w-full"
+                                class="mt-1 block w-full user-invalid:border-red"
+                                required
+                                autocomplete="new-password"
                             />
                             <InputError class="mt-2" :message="form.errors.password" />
                         </div>
@@ -52,18 +54,32 @@
                                 id="password_confirmation"
                                 v-model="form.password_confirmation"
                                 type="password"
-                                class="mt-1 block w-full"
+                                class="mt-1 block w-full user-invalid:border-red"
+                                required
+                                autocomplete="new-password"
                             />
                             <InputError class="mt-2" :message="form.errors.password_confirmation" />
                         </div>
+
+                        <div class="mt-4">
+                            <InputLabel for="terms">
+                                <div class="inline-flex items-center">
+                                    <Checkbox id="terms" v-model:checked="form.terms" name="terms" required class="user-invalid:border-red"/>
+                                    <div class="ms-2 inline">
+                                        I agree to the <a target="_blank" :href="route('terms.show')" class="underline rounded-md ">Terms of Service</a> and <a target="_blank" :href="route('policy.show')" class="underline rounded-md ">Privacy Policy</a>
+                                    </div>
+                                </div>
+                                <InputError class="mt-2" :message="form.errors.terms" />
+                            </InputLabel>
+                        </div>
                         <div class="flex justify-center mt-4">
-                            <button type="submit" class="bg-gradient-to-br from-top to-bot text-white rounded-full hover:bg-blue-800 font-medium text-sm px-5 py-2.5 text-center" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">Sign Up</button>
+                            <button type="submit" class="bg-gradient-to-br from-top to-bot text-white rounded-full font-medium text-sm px-5 py-2.5 text-center" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">Sign Up</button>
                         </div>
                     </form>
                 </div>
                 <div class="p-4 md:p-5 flex justify-center items-center bg-gradient-to-br from-top to-bot">
                     <p class="text-white mr-4">Already have an account?</p>
-                    <a :href="route('loginas')" type="button" class="bg-gray text-white rounded-full hover:bg-blue-800 font-medium text-sm px-5 py-2.5 text-center">Log in</a>
+                    <a :href="route('login')" type="button" class="bg-gray text-white rounded-full font-medium text-sm px-5 py-2.5 text-center cursor-pointer">Log in</a>
                 </div>
             </div>
         </div>
@@ -71,10 +87,12 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
 import { useForm } from '@inertiajs/vue3';
 import TextInput from '@/Components/TextInput.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import InputError from '@/Components/InputError.vue';
+import Checkbox from '@/Components/Checkbox.vue';
 
 const props = defineProps({
    isOpen: Boolean,
@@ -86,11 +104,12 @@ const form = useForm({
     email: '',
     password: '',
     password_confirmation: '',
+    terms: false,
 });
 
 const submit = () => {
-    form.post(route('registeris'), {
-        onFinish: () => form.reset('password'),
+    form.post(route('register'), {
+        onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
 </script>

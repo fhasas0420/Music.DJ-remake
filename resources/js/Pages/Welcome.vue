@@ -1,23 +1,21 @@
 <template>
     <Head title="Join the party! - Music.DJ"/>
-    <NavBar @open-register-modal="toggleRegisterModal" @open-login-modal="toggleLoginModal"/>
+    <div class="flex flex-col bg-black min-h-screen">
+      <NavBar @open-register-modal="toggleRegisterModal" @open-login-modal="toggleLoginModal"/>
+      <Header />
+      <Block />
+      <Footer />
+    </div>
     <RegisterModal :isOpen="isRegisterModalOpen" :onClose="closeRegisterModal"/>
     <LoginModal :isOpen="isLoginModalOpen" :onClose="closeLoginModal"/>
     <ForgotPasswordModal :is-open="isForgotPasswordModal" :on-close="closeForgotPasswordModal"/>
-    <main class="flex flex-col min-h-screen bg-black">
-        <div>
-            <Header/>
-            <Block />
-            <Footer/>
-        </div>
-    </main>
 </template>
 <script setup>
   import { Head, usePage, router } from "@inertiajs/vue3";
   import NavBar from "@/Components/Welcome/NavBar.vue";
-  import RegisterModal from "@/Pages/Auth/RegisterModal.vue";
-  import LoginModal from "@/Pages/Auth/LoginModal.vue";
-  import ForgotPasswordModal from "@/Pages/Auth/ForgotPasswordModal.vue";
+  import RegisterModal from "@/Pages/Auth/Register.vue";
+  import LoginModal from "@/Pages/Auth/Login.vue";
+  import ForgotPasswordModal from "@/Pages/Auth/ForgotPassword.vue";
   import Footer from "@/Components/Welcome/Footer.vue";
   import Header from "@/Components/Welcome/Header.vue";
   import Block from "@/Components/Welcome/Main.vue";
@@ -61,3 +59,12 @@
     if (page.url === "/login") router.visit("/");
   };
   </script>
+
+<style>
+.pub-layout-default {
+    display: fixed;
+    grid-template-columns: 56px 1fr auto;
+    grid-template-rows: auto 1fr;
+    max-width: 1200px
+}
+</style>

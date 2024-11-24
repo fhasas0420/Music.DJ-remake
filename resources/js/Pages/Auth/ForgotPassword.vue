@@ -7,22 +7,18 @@
                         <h3 class="text-xl font-semibold text-black text-center">Password Reset</h3>
                         <p class="text-black mt-2 text-center">Provide the email address associated with your account to recover your password.</p>
                     </div>
-                   <button @click="onClose" type="button" class="end-2.5 text-black bg-transparent hover:text-black rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="authentication-modal">
-                       <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                       </svg>
-                       <span class="sr-only">Close</span>
-                   </button>
+                    <Icon icon="akar-icons:cross" class="h-4 w-4 text-black mt-1 cursor-pointer" @click="onClose" />
                </div>
-               <div class="p-4 md:p-5 border-none">
-                   <form class="space-y-4" @submit.prevent="submit">
+               <div class="p-4 md:p-5">
+                    <form class="space-y-4" @submit.prevent="submit" novalidate>
                         <div>
                             <InputLabel for="email" value="Enter your email"/>
                             <TextInput
                                 id="email"
                                 v-model="form.email"
                                 type="email"
-                                class="mt-1 block w-full"
+                                class="mt-1 block w-full user-invalid:border-red"
+                                required
                             />
                             <InputError class="mt-2" :message="form.errors.email"/>
                         </div>
@@ -37,6 +33,7 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
 import { useForm } from '@inertiajs/vue3';
 import TextInput from '@/Components/TextInput.vue';
 import InputLabel from '@/Components/InputLabel.vue';
@@ -48,19 +45,11 @@ const props = defineProps({
     status: String
 });
 
-
 const form = useForm({
     email: '',
 });
 
 const submit = () => {
-    form.transform(data => ({
-        ...data,
-        remember: form.remember ? 'on' : '',
-    })).post(route('forgot-password'), {
-        onFinish: () => form.reset('email'),
-    })
-
+    form.post(route('password.email'));
 };
-
 </script>

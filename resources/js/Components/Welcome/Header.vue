@@ -1,6 +1,6 @@
 <template>
   <div class="bg-center bg-cover bg-[url('/images/header.png')] bg-no-repeat blur-none z-0">
-    <div class="mx-auto w-full max-w-screen-xl px-6 py-40 relative">
+    <div class="mx-auto w-full px-6 py-40 relative">
       <div class="flex flex-wrap items-center justify-center">
         <div class="px-6 text-center text-white md:px-12">
           <h1 class="mb-6 text-4xl md:text-5xl font-Lemon">Coming Soon!</h1>
@@ -37,7 +37,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 
-const countDownDate = new Date("Mar 1, 2025 00:00:00").getTime();
+const countDownDate = new Date("Mar 30, 2025 00:00:00").getTime();
 const now = ref(new Date().getTime());
 let timer = null;
 
