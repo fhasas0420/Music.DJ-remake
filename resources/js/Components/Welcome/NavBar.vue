@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto bg-black w-full md:px-20">
-    <div class="flex items-center justify-between px-4 py-3">
+    <div class="flex items-center justify-between px-6 py-3">
       <a :href="route('welcome')" class="flex items-center">
         <img src="/images/logo.png" class="h-10" alt="Music.DJ">
         <span class="self-center text-2xl font-semibold text-white">Music.DJ</span>

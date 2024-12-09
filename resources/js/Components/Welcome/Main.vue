@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-200 py-10 flex justify-center">
+    <div class="bg-gray-200 flex py-10 px-6">
         <div class="container mx-auto md:px-24">
             <h1 class="text-white text-xl md:text-5xl font-bold mb-3"> Stream music together!</h1>
             <h2 class="text-purple text-xl md:text-2xl font-sans mb-4"> Listen, play, discover, and connect with music fans around the world!</h2>

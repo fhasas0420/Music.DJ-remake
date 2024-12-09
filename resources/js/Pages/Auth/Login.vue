@@ -39,7 +39,7 @@
                         <a class="inline-block align-baseline text-sm text-black" :href="route('forgot-password')">Forgot Password?</a>
                         </div>
                        <div class="flex justify-center mt-4">
-                            <button type="submit" class="bg-gradient-to-br from-top to-bot text-white rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">Login</button>
+                            <button type="submit" class="bg-gradient-to-br from-top to-bot text-white rounded-full font-medium text-sm px-5 py-2.5 text-center" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">Login</button>
                         </div>
                     </form>
                </div>

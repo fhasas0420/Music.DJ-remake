@@ -77,7 +77,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="p-4 md:p-5 flex justify-center items-center bg-gradient-to-br from-top to-bot">
+                <div class="p-4 md:p-5 flex justify-center items-center bg-gradient-to-br from-top to-bot rounded-b-lg">
                     <p class="text-white mr-4">Already have an account?</p>
                     <a :href="route('login')" type="button" class="bg-gray text-white rounded-full font-medium text-sm px-5 py-2.5 text-center cursor-pointer">Log in</a>
                 </div>
